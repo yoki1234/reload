@@ -3,8 +3,8 @@
     padding: 0;
 }
 :root{
-    --button-colour:rgb(213, 233, 162);
-    --button-text:rgb(23, 43, 43);
+    --button-colour:#d5e9a2;
+    --button-text:#172b2b;
 }
 .wrapper{
     display: flex;
@@ -24,65 +24,83 @@
 .com{
     text-align: center;
     background-color: var(--button-colour);
-    color: rgb(23, 43, 43);
+    color: var(--button-text);
     border-radius: 50px;
+    box-shadow: 2px 2px black;
+
 }
-.one{
+.com:active{
+    box-shadow: 0px 0px;
+}
+#one{
     grid-column: 1;
 }
-.two{
+#two{
     grid-column: 2;
 }
-.three{
+#three{
     grid-column: 3;
 }
-.four{
+#four{
     grid-column: 1;
     grid-row: 2;
 }
-.five{
+#five{
     grid-column: 2;
     grid-row: 2;
 }
-.six{
+#six{
     grid-column: 3;
     grid-row: 2;
 }
-.seven{
+#seven{
     grid-column: 1;
     grid-row: 3;
 }
-.eight{
+#eight{
     grid-column: 2;
     grid-row: 3;
 }
-.nine{
+#nine{
     grid-column: 3;
     grid-row: 3;
 }
-.ten{
+#ten{
     grid-column: 1/4;
     grid-row: 4;
 }
-.plus{
+#plus{
     grid-column: 1;
     grid-row: 5;
 }
-.sub{
+#sub{
     grid-column: 2;
     grid-row: 5;
 }
-.mul{
+#mul{
     grid-column: 1;
     grid-row: 6;
 }
-.div{
+#div{
     grid-column: 2;
     grid-row: 6;
 }
-.equ{
+#equ{
     grid-column: 3;
     grid-row:5/7;
     align-self: center;
     padding: 10px;
+}
+#windowW{
+    background-color: antiquewhite;
+    width:200px;
+    height: 50px;
+    border-radius: 16px;
+    position: relative;
+}
+#window{
+    width: fit-content;
+    position:absolute;
+    top: 30%;
+    right: 45%;
 }
