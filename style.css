@@ -10,12 +10,15 @@
     font-family:"Frijole" ;
     src: url(assets/Frijole-Regular.ttf);
 }
+.title{
+    font-family: "Ewert";
+}
 body{
     height: 600px;
     background-color: black;
     background-image: url(assets/SL-120319-25700-30.jpg);
     background-repeat: no-repeat;
-    background-size: 78pc;
+    background-size: 80pc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +34,7 @@ h1{
     text-shadow: 1px 1px 2px powderblue;
 }
 p{
+    text-align: center;
     font-family: "Frijole";
     color: antiquewhite;
 }
