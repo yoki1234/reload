@@ -1,85 +1,46 @@
-*{
-    margin: 0;
-    padding: 0;
+
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 400px;
 }
-@font-face {
-    font-family:"Ewert" ;
-    src: url(assets/Ewert-Regular.ttf);
-}
-@font-face {
-    font-family:"Frijole" ;
-    src: url(assets/Frijole-Regular.ttf);
+:root{
+  --primary:#5f9341;
+  --secondary:#fff;
 }
 
-body{
-    height: 600px;
-    background-color: black;
-    background-image: url(assets/SL-120319-25700-30.jpg);
-    background-repeat: no-repeat;
-    background-size: 80pc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-}
-h1{
-    font-family: "Ewert";
-    color: antiquewhite;
-    font-weight: 400;
-    font-size: 35px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px powderblue;
-}
-p{
-    text-align: center;
-    font-family: "Frijole";
-    color: antiquewhite;
-}
-#card-el{
-    text-align: center;
-    width: 200px;
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--primary);
+  margin-bottom: 4px;
 }
 
-button{
-    width: 150px;
-    margin: 5px 0;
-    border-radius: 8px;
-    font-family: "Frijole";
-    color:gold;
-    background-color: rgb(43, 42, 42);
-    border: 0;
-    box-shadow: 1px 1px 2px gold,-1px -1px 2px rgb(13, 232, 240);
+button {
+  background: var(--primary);
+  color: var(--secondary);
+  padding: 10px 20px;
+  border: 1px solid var(--primary);
+  font-weight: bold;
 }
-button:active{
-    color: aqua;
-    box-shadow: 1px 1px 2px rgb(13, 232, 240) , -1px -1px 2px gold;
-  
+#delete-btn{
+  background-color: var(--secondary);
+  color: var(--primary);
 }
-#player-el{
-    margin-top: 10px;
-    font-size: 12px;
+
+ul {
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
 }
-#message-el{
-    text-shadow: 1px 1px 2px gold;
-    font-size: 13px;
+
+li {
+  margin-top: 5px;
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 300px;
-    height: fit-content;
-    background-color: black;
-    /* background-image: url(assets/—Pngtree—gaming\ black\ gold\ playing\ cards_1176654.png); */
-    /* background-repeat: no-repeat; */
-    /* background-size: contain ; */
-    align-self: center;
-    border-radius: 30px;
-    box-shadow:  2px 2px 10px rgb(0, 193, 241) ,-2px -2px 10px gold;
-}
-.wrapper:hover{
-    box-shadow:  2px 2px 10px gold ,-2px -2px 10px rgb(0, 193, 241);
-    transition-duration: 3s;
-}
+
+a {
+  color: var(--primary);
+  }
+

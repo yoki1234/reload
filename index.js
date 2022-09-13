@@ -1,111 +1,67 @@
-// create two variables,firstCard and secondCard.
-//set their values to a random number between 2-11.
-
-//create a variable ,sum, and set it to the sum of the two cards
 
 
-let cards = [];//array -ordered list of items
-let sum = 0;
-let hasBlackJack = false;
-let isAlive = false;
-let message = "";
+// let myLeads = `["www.youtube.com"]`
+// myLeads = JSON.parse(myLeads);
+// myLeads.push("www.hello.com");
+// myLeads = JSON.stringify(myLeads)
+// console.log(typeof myLeads);
+// console.log(myLeads);
+let myLeads = [];
+const inputEl = document.getElementById("input-el")
+const inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
+const deleteBtn =document.getElementById("delete-btn")
 
-let messageEl = document.getElementById("message-el");
-let sumEl = document.getElementById("sum-el");
-let cardEl = document.getElementById("card-el");
-// let player ={
-//   name:"Akshay Ashok",
-//   chip: 200,
-// }
-// let playerEL= document.getElementById("player-el");
-// playerEL.textContent=`${player.name}: $${player.chip}`
+const leadsFromLocal=JSON.parse(localStorage.getItem("myLeads")) // from string to array
 
-function getRandomCard(){
-  let randomNum=Math.floor(Math.random()*13)+1;
-  if(randomNum === 1){
-    return 11;
-  }
-  else if(randomNum > 10){
-    return 10;
-  }
-  else{
-    return randomNum;
-  }
-  // return Math.floor(Math.random()*13)+1;
+
+
+if(leadsFromLocal){
+  myLeads = leadsFromLocal;
+  render(myLeads)
 }
 
-
-function startGame(){
-  isAlive = true;
-  let firstCard = getRandomCard();
-  let secondCard = getRandomCard();
-  cards=[firstCard,secondCard];
-  sum = firstCard+secondCard;
-  renderGame();
+function render(leads) {
+  let listItems = ""
+  for (let i = 0; i < leads.length; i++) {
+      listItems += `
+          <li>
+              <a target='_blank' href='${leads[i]}'>
+                  ${leads[i]}
+              </a>
+          </li>
+      `
+  }
+  ulEl.innerHTML = listItems  
+   /*-----another method-------*/
+  // const li =document.createElement("li");
+  // li.textContent=myLeads[i];
+  // ulEl.append(li);
 }
 
-function renderGame(){
-  cardEl.textContent= `Cards: `
+inputBtn.addEventListener("click", ()=> {
+  myLeads.push(inputEl.value)
+  inputEl.value = ""
 
-  for (let i = 0; i < cards.length; i++) {
-    cardEl.textContent += cards[i]+" ";
-  }
+  localStorage.setItem("myLeads",JSON.stringify(myLeads)) // it is converting array to string,so it can be stored in localstorage.
+  render(myLeads)
 
-  sumEl.textContent= `Sum: ${sum}`;
-  if(sum <= 20){
-    message="Do you want to draw a new card?";
-  }
-  else if(sum === 21){
-    message="You've got blackJack";
-    hasBlackJack = true;
-  }
-  else {
-    message="You're out of the game!";
-    isAlive = false;
-  }
-  messageEl.textContent=message;
-  // console.log(hasBlackJack);
-  // console.log(isAlive);
-  // console.log(message);
-}
+  console.log(localStorage.getItem("myLeads"));
+})
 
-function newCard(){
-  if(isAlive===true && hasBlackJack ===false){
-    console.log("cliked");
-    let card = getRandomCard();
-    sum+=card;
-    cards.push(card);
-    renderGame();
-  }
-}
+deleteBtn.addEventListener("dblclick",()=>{
+   console.log("clicked");
+   localStorage.clear();
+   myLeads = []
+   render(myLeads)
+})
+// console.log(leadsFromLocal);
+// window.localStorage.setItem("myname","akshay ashok");
+// let name =localStorage.getItem("myname");
+//  console.log(name);
+// localStorage.clear();
 
-//check if the person is old enough to enter the nightclub (21)
-// log a suitable message to the console in both cases
 
-// let age = 18;
-// if(age <= 20){
-//   console.log("you can not enter the club");
-// }
-// else{
-//   console.log("welcome");
-// }
-// check if the person is elegible for a birthday card from the King!(100)
 
-// let age = 100;
 
-// if(age < 100){
-//   console.log("Not elegible");
-// }
-// else if(age === 100){
-//   console.log("Here is your birthday card from the king!");
-// }
-// else{
-//   console.log("Not elegible, you have already gotten one");
-// }
-// console.log(4===3)// false
-// console.log(5>2);// true
-// console.log(12>12);// false
-// console.log(3<0);// false
-// console.log(3>=3);// true
-// console.log(11<=11);// true
-// console.log(3<=2);// false
+
