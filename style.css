@@ -10,9 +10,7 @@
     font-family:"Frijole" ;
     src: url(assets/Frijole-Regular.ttf);
 }
-.title{
-    font-family: "Ewert";
-}
+
 body{
     height: 600px;
     background-color: black;
