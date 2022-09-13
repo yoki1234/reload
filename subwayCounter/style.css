@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --color1:#440;
+    --color2:#454;
+}
+body{
+    font-family:'Combo-Regular';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrap{
+    margin: 12% 0;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--color1);
+    background-color: var(--color2);
+    width: fit-content;
+}
+
+
+@font-face {
+    font-family: 'Combo-Regular';
+    src: url(assests/Combo-Regular.ttf);
+}
+h1{
+    font-size: 50px;
+    color: cornsilk;
+}
+h2{
+    font-size: 45px;
+    color: cornsilk;
+}
+.btn{
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    color: rgb(155, 126, 84);
+    font-size: 20px;
+    border: 2px solid  rgb(155, 126, 84);
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(155, 126, 84);
+    color: cornsilk;
+}
+.increment-btn:active{
+    color: rgb(13, 105, 13);
+    border:2px solid rgb(23, 54, 23);
+    background-color: rgb(223, 183, 128); 
+}
+.decrement-btn:active{
+   color: red;
+   border: 2px solid rgb(97, 26, 26);
+   background-color: rgb(223, 183, 128); 
+   
+}
